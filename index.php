@@ -15,7 +15,7 @@ if($method == "POST"){
         case "Geheugen":
             $speech = "Je zoekt naar het geheugen";
             break;
-        case "Scherm"
+        case "Scherm":
             $speech = "Je zoekt naar het formaat van het scherm";
             break;
         default:
