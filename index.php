@@ -7,7 +7,7 @@ if($method == "POST"){
     $json = json_decode($requestBody);
     
     $eigenschappen = $json->queryResult->parameters->Eigenschappen;
-    $responseId = $json->queryResult->responseId;
+    $responseId = $json->responseId;
 
     switch ($eigenschappen) {
         case "Opslagruimte":
