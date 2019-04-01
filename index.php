@@ -23,7 +23,6 @@ if($method == "POST"){
             break;
     }
     
-    $speech = $eigenschappen;
 
     $response = new \stdClass();
     $response->speech = $speech;
