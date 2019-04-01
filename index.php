@@ -6,7 +6,7 @@ if($method == "POST"){
     $requestBody = file_get_contents('php://input');
     $json = json_decode($requestBody);
     
-    $eigenschappen = $json->result->parameters->Eigenschappen;
+    $eigenschappen = $json->queryResult->parameters->Eigenschappen;
 
     switch ($eigenschappen) {
         case "Opslagruimte":
