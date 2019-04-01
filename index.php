@@ -25,7 +25,7 @@ if($method == "POST"){
     
 
     $response = new \stdClass();
-    $response->speech = "";
+    $response->speech = $speech;
     $response->displayText = $speech;
     $response->source = "webhook";
     echo json_encode($response);
