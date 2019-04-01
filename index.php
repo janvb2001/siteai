@@ -7,22 +7,12 @@ if($method == "POST"){
     $json = json_decode($requestBody);
     
     $eigenschappen = $json->queryResult->parameters->Eigenschappen;
-    $responseId = $json->responseId;
+    $eenheid = $json->queryResult->parameters->Eenheid;
+    $hoeveelheid = $json->queryResult->parameters->Hoeveelheid;
+    $nummer = $json->queryResult->parameters->number;
 
-    switch ($eigenschappen) {
-        case "Opslagruimte":
-            $speech = "Je zoekt naar de opslagruimte";
-            break;
-        case "Geheugen":
-            $speech = "Je zoekt naar het geheugen";
-            break;
-        case "Scherm":
-            $speech = "Je zoekt naar het formaat van het scherm";
-            break;
-        default:
-            $speech = "Ik kan niet vinden wat je zoekt.";
-            break;
-    }
+    $speech = "Je wilt $hoeveelheid $nummer $eenheid $eigenschappen";
+    
     
 
     $response = new \stdClass();
