@@ -7,6 +7,7 @@ if($method == "POST"){
     $json = json_decode($requestBody);
     
     $eigenschappen = $json->queryResult->parameters->Eigenschappen;
+    $responseId = $json->queryResult->responseId;
 
     switch ($eigenschappen) {
         case "Opslagruimte":
@@ -25,6 +26,7 @@ if($method == "POST"){
     
 
     $response = new \stdClass();
+    $response->responseId = $responseId;
     $response->fulfillmentText = $speech;
     $response->queryResult = $speech;
     $response->speech = $speech;
