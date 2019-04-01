@@ -22,6 +22,8 @@ if($method == "POST"){
             $speech = "Ik kan niet vinden wat je zoekt.";
             break;
     }
+    
+    $speech = $eigenschappen;
 
     $response = new \stdClass();
     $response->speech = $speech;
