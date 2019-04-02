@@ -1,6 +1,6 @@
 <?php
 
-//session_start();
+session_start();
 
 $method = $_SERVER['REQUEST_METHOD'];
 
@@ -16,7 +16,7 @@ if($method == "POST"){
     $nummer = $json->queryResult->parameters->number;
 
     $speech = "Je wilt $hoeveelheid $nummer $eenheid $eigenschappen in je telefoon. Ik hoop dat we binnenkort kunnen helpen!";
-    
+    $_SESSION["eigenschap"] = $eigenschappen;
     
 
     $response = new \stdClass();
