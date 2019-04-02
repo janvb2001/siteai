@@ -17,7 +17,6 @@ if($method == "POST"){
 
     $response = new \stdClass();
     $response->fulfillmentText = $speech;
-    $response->andereVar = "Test12345";
     echo json_encode($response);
 
 }
