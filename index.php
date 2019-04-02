@@ -11,7 +11,7 @@ if($method == "POST"){
     $hoeveelheid = $json->queryResult->parameters->Hoeveelheid;
     $nummer = $json->queryResult->parameters->number;
 
-    $speech = "Je wilt $hoeveelheid $nummer $eenheid $eigenschappen in je telefoon. Ik hoop dat we kunnen helpen!";
+    $speech = "Je wilt $hoeveelheid $nummer $eenheid $eigenschappen in je telefoon. Ik hoop dat we binnenkort kunnen helpen!";
     
     
 
