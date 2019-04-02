@@ -1,9 +1,17 @@
 <?php
-
-session_start();
-
 $method = $_SERVER['REQUEST_METHOD'];
 
+ //Functie om iets aan de CSV toe te voegen
+ function VoegToeCSV($CSVarray){
+    $line = str_getcsv($CSVarray);
+
+    $file = fopen("zoekgegevens.csv", "a");
+
+    fputcsv($file,$line);
+
+    fclose($file);
+
+}
 
 if($method == "POST"){
 
@@ -15,8 +23,11 @@ if($method == "POST"){
     $hoeveelheid = $json->queryResult->parameters->Hoeveelheid;
     $nummer = $json->queryResult->parameters->number;
 
+    $zoekData = "$eigenschappen,$eenheid,$hoeveelheid,$nummer";
+    VoegToeCSV($zoekData);
+
     $speech = "Je wilt $hoeveelheid $nummer $eenheid $eigenschappen in je telefoon. Ik hoop dat we binnenkort kunnen helpen!";
-    $_SESSION["eigenschap"] = $eigenschappen;
+    
     
 
     $response = new \stdClass();
