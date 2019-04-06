@@ -28,7 +28,7 @@ if($method == "POST"){
 
     
 
-    $speech = "Je wilt $hoeveelheid $nummer $eenheid $eigenschappen in je telefoon. Ik hoop dat we binnenkort kunnen helpen!";
+    $speech = "$vraag, $eigenschap, $eigenschap2, $waarde, $waarde2, $eenheid, $eenheid2, $antiwoord, $kwaliteitswoord, $hoeveelheid, $merk, $merk2, $kleur, $kleur2, $software, $schermtechniek";
     
     
 
