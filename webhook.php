@@ -36,11 +36,11 @@ if($method == "POST"){
         $eenheid2 = "GB";
     }
     if($eenheid == "cm"){
-        $waarde = $waarde * 0.254;
+        $waarde = $waarde * 1/2.54;
         $eenheid = "Inch";
     }
     if($eenheid2 == "cm"){
-        $waarde2 = $waarde2 * 0.254;
+        $waarde2 = $waarde2 * 1/2.54;
         $eenheid2 = "Inch";
     }
 
