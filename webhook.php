@@ -23,8 +23,16 @@ if($method == "POST"){
     $software = $json->queryResult->parameters->Software;
     $schermtechniek = $json->queryResult->parameters->Schermtechnieken;
     
-
+    //opslagruimte, geheugen, scherm, camera, merk, software, kleur, waterbestendig, stereo, uitbereidbare opslag, schermtechniek, prijs
     
+
+    //eenheden, MB, GB, inch, cm, MP, euro
+    if($eenheid == "MB"){
+        $waarde = $waarde/1000;
+    }
+    if($eenheid2 == "MB"){
+        $waarde2 = $waarde/1000;
+    }
 
     $speech = "$vraag, $eigenschap, $eigenschap2, $waarde, $waarde2, $eenheid, $eenheid2, $antiwoord, $kwaliteitswoord, $hoeveelheid, $merk, $merk2, $kleur, $kleur2, $software, $schermtechniek";
     
