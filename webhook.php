@@ -29,10 +29,21 @@ if($method == "POST"){
     //eenheden, MB, GB, inch, cm, MP, euro
     if($eenheid == "MB"){
         $waarde = $waarde/1000;
+        $eenheid = "GB";
     }
     if($eenheid2 == "MB"){
         $waarde2 = $waarde/1000;
+        $eenheid2 = "GB";
     }
+    if($eenheid == "cm"){
+        $waarde = $waarde * 0.254;
+        $eenheid = "Inch"
+    }
+    if($eenheid2 == "cm"){
+        $waarde2 = $waarde * 0.254;
+        $eenheid2 = "Inch"
+    }
+
 
     $speech = "$vraag, $eigenschap, $eigenschap2, $waarde, $waarde2, $eenheid, $eenheid2, $antiwoord, $kwaliteitswoord, $hoeveelheid, $merk, $merk2, $kleur, $kleur2, $software, $schermtechniek";
     
