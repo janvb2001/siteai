@@ -37,11 +37,11 @@ if($method == "POST"){
     }
     if($eenheid == "cm"){
         $waarde = $waarde * 0.254;
-        $eenheid = "Inch"
+        $eenheid = "Inch";
     }
     if($eenheid2 == "cm"){
         $waarde2 = $waarde2 * 0.254;
-        $eenheid2 = "Inch"
+        $eenheid2 = "Inch";
     }
 
 
