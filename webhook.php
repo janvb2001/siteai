@@ -12,7 +12,7 @@ if($method == "POST"){
     $waarde = $json->queryResult->parameters->number;
     $waarde2 = $json->queryResult->parameters->number1;
     $eenheid = $json->queryResult->parameters->Eenheid;
-    $eenheid2 = $json->queryResult->parameters->Eenheid2;
+    $eenheid2 = $json->queryResult->parameters->Eenheid1;
     $antiwoord = $json->queryResult->parameters->Antistatement;
     $kwaliteitswoord = $json->queryResult->parameters->Kwaliteitswoord;
     $hoeveelheid = $json->queryResult->parameters->Hoeveelheid;
