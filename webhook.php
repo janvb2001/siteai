@@ -1,30 +1,32 @@
 <?php
 $method = $_SERVER['REQUEST_METHOD'];
 
- //Functie om iets aan de CSV toe te voegen
- function VoegToeCSV($CSVarray){
-    $line = str_getcsv($CSVarray);
-
-    $file = fopen("zoekgegevens.csv", "a");
-
-    fputcsv($file,$line);
-
-    fclose($file);
-
-}
-
 if($method == "POST"){
 
     $requestBody = file_get_contents('php://input');
     $json = json_decode($requestBody);
     
-    $eigenschappen = $json->queryResult->parameters->Eigenschappen;
+    $vraag = $json->queryResult->queryText;
+    $eigenschap = $json->queryResult->parameters->Eigenschappen;
+    $eigenschap2 = $json->queryResult->parameters->Eigenschappen1;
+    $waarde = $json->queryResult->parameters->number;
+    $waarde2 = $json->queryResult->parameters->number1;
     $eenheid = $json->queryResult->parameters->Eenheid;
+    $eenheid2 = $json->queryResult->parameters->Eenheid2;
+    $antiwoord = $json->queryResult->parameters->Anti-statement;
+    $kwaliteitswoord = $json->queryResult->parameters->Kwaliteitswoord;
+    $hoeveelheid = $json->queryResult->parameters->Hoeveelheid;
+    $merk = $json->queryResult->parameters->Merk;
+    $merk2 = $json->queryResult->parameters->Merk1;
+    $kleur = $json->queryResult->parameters->Kleur;
+    $kleur2 = $json->queryResult->parameters->Kleur1;
+    $software = $json->queryResult->parameters->Software;
+    $schermtechniek = $json->queryResult->parameters->Schermtechnieken;
+    
     $hoeveelheid = $json->queryResult->parameters->Hoeveelheid;
     $nummer = $json->queryResult->parameters->number;
 
-    $zoekData = "$eigenschappen,$eenheid,$hoeveelheid,$nummer";
-    VoegToeCSV($zoekData);
+    
 
     $speech = "Je wilt $hoeveelheid $nummer $eenheid $eigenschappen in je telefoon. Ik hoop dat we binnenkort kunnen helpen!";
     
